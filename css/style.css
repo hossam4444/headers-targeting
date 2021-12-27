@@ -1,0 +1,104 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --first-color:#2c6ccf;
+  --second-color: #cf2c2c;
+  --third-color: #309e0e;
+  --forth-color: #cd661a;
+}
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+body > div .blue {
+  color: var(--first-color, #2c6ccf);
+}
+body > div .blue::before {
+  background-color: var(--first-color, #2c6ccf);
+}
+body > div .red {
+  color: var(--second-color, #cf2c2c);
+}
+body > div .red::before {
+  background-color: var(--second-color, #cf2c2c);
+}
+body > div .green {
+  color: var(--third-color, #309e0e);
+}
+body > div .green::before {
+  background-color: var(--third-color, #309e0e);
+}
+body > div .gold {
+  color: var(--forth-color, #cd661a);
+}
+body > div .gold::before {
+  background-color: var(--forth-color, #cd661a);
+}
+body > div > div {
+  margin: 20px 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid ;
+  width: fit-content;
+  font-size: 17px;
+  font-weight: bold;
+  position: relative;
+}
+body > div > div::before,
+body > div > div::after {
+  content: '';
+  position: absolute;
+}
+body > div > div::before {
+  width: 10px;
+  height: 10px;
+  background-color: var(--first-color);
+  left: 0;
+  bottom: -5px;
+}
+body > div > div::after {
+  width: 200px;
+  height: 1px;
+  bottom: -1px;
+  left: 0;
+  background-color: #ccc;
+  z-index: -10;
+}
+body .circle > div::before {
+  border-radius: 50%;
+}
+body .t-up > div::before {
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  bottom: 0;
+  width: 15px;
+}
+body .t-down > div::before {
+  clip-path: polygon(50% 100%, 0 0, 100% 0); 
+  bottom: -10px;
+  width: 15px;
+}
+.footer {
+  background-color: #333;
+  padding: 1.5em;
+  text-align: center;
+  color: white;
+  font-size: 19px;
+}
+.footer a {
+  text-decoration: none;
+  font-size: 18px;
+}
+.footer a:first-child {
+  color: #0075ff;
+}
+.footer a:nth-child(2) {
+  color: #ff5722;
+}
